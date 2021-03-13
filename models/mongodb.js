@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+
+import { connect } from 'mongoose';
  
-mongoose.connect('mongodb://localhost:27017/gantt-db', {useNewUrlParser: true}, (err) => {
+connect('mongodb+srv://m001-student:Om9QeJ6bejw6H39y@sandbox.ny9uv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true}, (err) => {
 if (!err) {
 console.log('Successfully Established Connection with MongoDB')
 }
@@ -10,4 +11,6 @@ console.log('Failed to Establish Connection with MongoDB with Error: '+ err)
 });
  
 //Connecting Node and MongoDB
-require('./gantt.model');
+import './gantt.model.project';
+import './gantt.model.task';
+import './gantt.model.subtask';
