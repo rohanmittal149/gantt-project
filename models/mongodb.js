@@ -14,3 +14,4 @@ console.log('Failed to Establish Connection with MongoDB with Error: '+ err)
 import './gantt.model.project';
 import './gantt.model.task';
 import './gantt.model.subtask';
+export {};
