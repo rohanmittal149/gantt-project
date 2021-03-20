@@ -1,29 +1,29 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
 var subTaskSchema = new Schema({
-    name: {
+  name: {
     type: String,
     required: true
-    },
-    owner: {
+  },
+  owner: {
     type: Int32Array,
     required: true
-    },
-    isSubtask: {
+  },
+  isSubtask: {
     type: Boolean
-    },
-    startDate: {
+  },
+  startDate: {
     type: Date
-    },
-    duration: {
+  },
+  duration: {
     type: Date
-    },
-    completionPercentage: {
+  },
+  completionPercentage: {
     type: Int32Array
-    },
-    order: {
+  },
+  order: {
     type: Int32Array
-    }
-    });
-        
-module.exports = mongoose.model('SubTask', subTaskSchema);
+  }
+});
+
+module.exports = mongoose.model("SubTask", subTaskSchema);

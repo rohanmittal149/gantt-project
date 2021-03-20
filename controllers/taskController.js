@@ -4,6 +4,5 @@ import { model } from 'mongoose';
 var router = Router();
 
 exports.getTasks = (req, res) => {
-    Task.find({ userId: req.user._id })
-        .then(task => res.json(task))
-    };
+  Task.find({ userId: req.user._id }).then(task => res.json(task));
+};
