@@ -1,6 +1,7 @@
 //Import the dependencies
-import { Router } from 'express';
-import { model } from 'mongoose';
-//Creating a Router
-var router = Router();
+import Project from "../models/gantt.model.project";
+
 //Link
+export default function getProjects(req, res) {
+  Project.find({ userId: req.user._id }, task => res.json(task));
+}

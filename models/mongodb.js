@@ -12,8 +12,7 @@ connect(
   }
 );
 
-//Connecting Node and MongoDB
-import "./gantt.model.project";
-import "./gantt.model.task";
-import "./gantt.model.subtask";
-export {};
+// export all schemas from same place
+export { Project } from "./gantt.model.project";
+// import { taskSchema } from "./gantt.model.task";
+// import { subTaskSchema } from "./gantt.model.subtask";

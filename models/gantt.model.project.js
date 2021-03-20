@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
 //Attributes of the Project object
 var projectSchema = new Schema({
@@ -21,4 +21,5 @@ var projectSchema = new Schema({
     type: String
   }
 });
+
 module.exports = mongoose.model("Project", projectSchema);
