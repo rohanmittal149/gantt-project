@@ -1,24 +1,24 @@
-import { Schema, model } from 'mongoose';
- 
+import { Schema, model } from "mongoose";
+
 //Attributes of the Project object
 var projectSchema = new Schema({
-    name: {
+  name: {
     type: String,
     required: true
-    },
-    startDate: {
+  },
+  startDate: {
     type: Date,
     required: true
-    },
-    logo: {
+  },
+  logo: {
     type: String
-    },
-    projectManager: {
+  },
+  projectManager: {
     type: String,
     required: true
-    },
-    description: {
+  },
+  description: {
     type: String
-    }
+  }
 });
-module.exports = mongoose.model('Project', projectSchema);
+module.exports = mongoose.model("Project", projectSchema);
