@@ -1,5 +1,5 @@
 import express from "express";
-import taskController from "../models/project";
+import Project from "../models/project";
 const router = express.Router();
 
 // get a list of students from the database
