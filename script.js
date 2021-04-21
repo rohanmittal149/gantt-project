@@ -1,41 +1,49 @@
 //Import the necessary packages
 import express from "express";
 import cors from "cors";
-import { MongoClient } from "mongodb";
+import mongoose, { Schema, Model } from "mongoose";
 // import path from "path";
 // import exphb from 'express-handlebars';
-import projectController, { postProj } from "./controllers/projectController";
+//import projectController, { postProj } from "./controllers/projectController";
 // import taskController from "./controllers/taskController";
 //import subTaskController from './controllers/subTaskController';
 
+// set up our express app
 const app = express();
 
-app.use(express.json());
-app.use(cors());
-
-//Establish the server connection
-//PORT ENVIRONMENT VARIABLE
-const port = process.env.PORT || 8080;
-app.listen(port, () => console.log(`Listening on port ${port}..`));
-
-export const CONNECTION_URL = "mongodb+srv://admin:admin@gantt.y76jg.mongodb.net/admin?retryWrites=true&w=majority";
-export const DATABASE_NAME = "gantt";
-
-async function main() {
-  try {
-    const client = new MongoClient(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true });
-    await client.connect();
-
-    //Set the Controller path which will be responding the user actions
-    app
-      .route("/project")
-      .get(projectController)
-      .post((...arg) => postProj(arg, client));
-    // app.route("/task", taskController);
-    //app.route('/subTask', subTaskController);
-  } catch {
-    console.log("eror");
+// connect to mongodb
+mongoose.connect("mongodb+srv://m001-student:MfxDuaQS6a5yIia3@sandbox.ny9uv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  { useNewUrlParser: true },
+  err => {
+    if (!err) {
+      console.log("Successfully Established Connection with MongoDB");
+    } else {
+      console.log("Failed to Establish Connection with MongoDB with Error: " + err);
+    }
   }
-}
+);
 
-main();
+app.use(express.static('public'));
+
+app.use(express.json());
+// initialize routes
+app.use('/api',require('./routes/api'));
+
+// error handling middleware
+app.use(function(err,req,res,next){
+    //console.log(err);
+    res.status(422).send({error: err.message});
+});
+
+// listen for requests
+app.listen(process.env.port || 8080, function(){
+    console.log('Ready to Go!');
+});
+
+//Set the Controller path which will be responding the user actions
+
+//app.route("/project").get(projectController).post(postProj);
+// app.route("/task", taskController);
+//app.route('/subTask', subTaskController);
+
+
