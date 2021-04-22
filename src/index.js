@@ -36,7 +36,8 @@ app.use(function(err,req,res,next){
 });
 
 // listen for requests
-app.listen(process.env.port || 8080, function(){
+app.listen(process.env.PORT || 8080, function(res){
+  console.log(res);
     console.log('Ready to Go!');
 });
 

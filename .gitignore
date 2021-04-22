@@ -1,6 +1,9 @@
 # dependencies
 /node_modules
 
+#build files
+build
+
 # IDEs and editors
 /.idea
 .project
