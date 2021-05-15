@@ -2,11 +2,6 @@
 import express from "express";
 import cors from "cors";
 import mongoose, { Schema, Model } from "mongoose";
-// import path from "path";
-// import exphb from 'express-handlebars';
-//import projectController, { postProj } from "./controllers/projectController";
-// import taskController from "./controllers/taskController";
-//import subTaskController from './controllers/subTaskController';
 
 // set up our express app
 const app = express();
@@ -27,7 +22,8 @@ app.use(express.static('public'));
 
 app.use(express.json());
 // initialize routes
-app.use('/api',require('./routes/api'));
+app.use('/api',require('./routes/project'));
+app.use('/api',require('./routes/task'));
 
 // error handling middleware
 app.use(function(err,req,res,next){
