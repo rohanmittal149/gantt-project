@@ -1,0 +1,13 @@
+Task left for 19/02/20
+
+MongoDb server connection
+rewrite the action controllers for CURD operations
+
+
+
+
+
+mongodb+srv://m001-student:<password>@sandbox.ny9uv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+
+seperate  files for models

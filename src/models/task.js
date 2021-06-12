@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
 var taskSchema = new Schema({
   name: {
@@ -6,7 +6,7 @@ var taskSchema = new Schema({
     required: true
   },
   owner: {
-    type: Int32Array,
+    type: Number,
     required: true
   },
   isSubtask: {
@@ -20,10 +20,10 @@ var taskSchema = new Schema({
     type: Date
   },
   completionPercentage: {
-    type: Int32Array
+    type: Number
   },
   order: {
-    type: Int32Array
+    type: Number
   }
 });
 

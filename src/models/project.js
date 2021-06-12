@@ -8,10 +8,6 @@ var projectSchema = new Schema({
   },
   startDate: {
     type: Date,
-    required: true
-  },
-  logo: {
-    type: String
   },
   projectManager: {
     type: String,
